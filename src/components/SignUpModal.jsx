@@ -16,12 +16,33 @@ export default function SignUpModal({
   setIsOpen,
   baseURL,
   setSuccessfulMessage,
+  setToken,
+  setUserInfo,
 }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  console.log(error);
+  // To automatically log in a user after they sign up
+  function login() {
+    fetch(`${baseURL}/user/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username: email, password }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && !data.error) {
+          setToken(data.token);
+          localStorage.setItem("jwt", data.token);
+          setUserInfo(data.userInfo);
+          localStorage.removeItem("userInfo");
+          localStorage.setItem("userInfo", JSON.stringify(data.userInfo));
+        } else {
+          console.error(data.error);
+        }
+      });
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,6 +60,8 @@ export default function SignUpModal({
           setEmail("");
           setPassword("");
           setSuccessfulMessage(data.message);
+
+          login();
         } else {
           setSuccessfulMessage("");
           setError(data.error);

@@ -18,6 +18,8 @@ export default function HomePage({
           baseURL={baseURL}
         />
         <SectionOne
+          setToken={setToken}
+          setUserInfo={setUserInfo}
           baseURL={baseURL}
           setSuccessfulMessage={setSuccessfulMessage}
         />

@@ -2,7 +2,12 @@ import { useState } from "react";
 import SignUpModal from "../SignUpModal";
 import ladyPhoto from "../../assets/images/section-1/lady.jpg";
 
-export default function SectionOne({ baseURL, setSuccessfulMessage }) {
+export default function SectionOne({
+  baseURL,
+  setSuccessfulMessage,
+  setToken,
+  setUserInfo,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -29,6 +34,8 @@ export default function SectionOne({ baseURL, setSuccessfulMessage }) {
 
       {isOpen && (
         <SignUpModal
+          setToken={setToken}
+          setUserInfo={setUserInfo}
           setIsOpen={setIsOpen}
           baseURL={baseURL}
           setSuccessfulMessage={setSuccessfulMessage}

@@ -3,7 +3,6 @@ import { useState } from "react";
 // COMPONENTS
 import AuthForm from "./AuthForm";
 import AlternativeAuth from "./AlternativeAuth";
-import SignUpModal from "./SignUpModal";
 
 export default function LoginModal({
   isOpen,
