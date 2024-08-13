@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import logo from "../assets/icons/logo.svg";
+import LoginModal from "./LoginModal";
 
 export default function HomeHeader({ setToken, setUserInfo, baseURL }) {
   const [currentScrollY, setcurrentScrollY] = useState(0);
@@ -33,6 +34,16 @@ export default function HomeHeader({ setToken, setUserInfo, baseURL }) {
           Log in
         </button>
       </header>
+
+      {isOpen && (
+        <LoginModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          setToken={setToken}
+          setUserInfo={setUserInfo}
+          baseURL={baseURL}
+        />
+      )}
     </>
   );
 }
