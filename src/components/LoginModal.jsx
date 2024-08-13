@@ -66,6 +66,8 @@ export default function LoginModal({
           <AlternativeAuth />
         </div>
       </div>
+
+      {/*  */}
     </div>
   );
 }
