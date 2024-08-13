@@ -15,7 +15,6 @@ import AlternativeAuth from "./AlternativeAuth";
 export default function SignUpModal({
   setIsOpen,
   baseURL,
-  setSuccessfulMessage,
   setToken,
   setUserInfo,
 }) {
@@ -59,11 +58,9 @@ export default function SignUpModal({
           setError("");
           setEmail("");
           setPassword("");
-          setSuccessfulMessage(data.message);
 
           login();
         } else {
-          setSuccessfulMessage("");
           setError(data.error);
         }
       });

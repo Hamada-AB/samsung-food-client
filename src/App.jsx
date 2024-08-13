@@ -9,7 +9,6 @@ const baseURL = "http://localhost:5000";
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem("jwt"));
   const [userInfo, setUserInfo] = useState(getUserInfo);
-  const [successfulMessage, setSuccessfulMessage] = useState("");
 
   function getUserInfo() {
     return JSON.parse(localStorage.getItem("userInfo"));
@@ -19,8 +18,6 @@ export default function App() {
     <>
       {!token ? (
         <HomePage
-          successfulMessage={successfulMessage}
-          setSuccessfulMessage={setSuccessfulMessage}
           setToken={setToken}
           setUserInfo={setUserInfo}
           baseURL={baseURL}
@@ -29,7 +26,6 @@ export default function App() {
         <MainPage
           token={token}
           setToken={setToken}
-          setSuccessfulMessage={setSuccessfulMessage}
           userInfo={userInfo}
           baseURL={baseURL}
         />

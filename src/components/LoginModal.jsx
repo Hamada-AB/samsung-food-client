@@ -5,8 +5,9 @@ import AuthForm from "./AuthForm";
 import AlternativeAuth from "./AlternativeAuth";
 
 export default function LoginModal({
-  isOpen,
-  setIsOpen,
+  setIsSignUpModalOpen,
+  isLoginModalOpen,
+  setIsLoginModalOpen,
   setToken,
   setUserInfo,
   baseURL,
@@ -27,7 +28,7 @@ export default function LoginModal({
       .then((data) => {
         if (data && !data.error) {
           setToken(data.token);
-          setIsOpen(false);
+          setIsLoginModalOpen(false);
           localStorage.setItem("jwt", data.token);
 
           setUserInfo(data.userInfo);
@@ -45,7 +46,10 @@ export default function LoginModal({
     <div>
       <div className="modal-overlay">
         <div className="login-modal-content">
-          <button className="close-button" onClick={() => setIsOpen(false)}>
+          <button
+            className="close-button"
+            onClick={() => setIsLoginModalOpen(false)}
+          >
             &times;
           </button>
 
@@ -60,14 +64,18 @@ export default function LoginModal({
           />
           <div className="no-account">
             <p>Don&#39;t have an account?</p>
-            <button>Sign Up</button>
+            <button
+              onClick={() => {
+                setIsSignUpModalOpen(true);
+              }}
+            >
+              Sign Up
+            </button>
           </div>
 
           <AlternativeAuth />
         </div>
       </div>
-
-      {/*  */}
     </div>
   );
 }

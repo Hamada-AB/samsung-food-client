@@ -1,4 +1,4 @@
-export default function Header({ userInfo, setToken, setSuccessfulMessage }) {
+export default function Header({ userInfo, setToken }) {
   return (
     <>
       <header>
@@ -13,7 +13,6 @@ export default function Header({ userInfo, setToken, setSuccessfulMessage }) {
                 onClick={() => {
                   // To sign out
                   setToken("");
-                  setSuccessfulMessage("");
                   localStorage.removeItem("jwt");
                 }}
               >

@@ -2,10 +2,18 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import logo from "../assets/icons/logo.svg";
 import LoginModal from "./LoginModal";
+import SignUpModal from "./SignUpModal";
 
 export default function HomeHeader({ setToken, setUserInfo, baseURL }) {
   const [currentScrollY, setcurrentScrollY] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (isSignUpModalOpen) {
+      setIsLoginModalOpen(false);
+    }
+  }, [isSignUpModalOpen]);
 
   const headerClasses = clsx({
     "home-header": true,
@@ -30,18 +38,28 @@ export default function HomeHeader({ setToken, setUserInfo, baseURL }) {
         <div className="logo">
           <img src={logo} alt="samsung logo." />
         </div>
-        <button className="login-btn" onClick={() => setIsOpen(true)}>
+        <button className="login-btn" onClick={() => setIsLoginModalOpen(true)}>
           Log in
         </button>
       </header>
 
-      {isOpen && (
+      {isLoginModalOpen && (
         <LoginModal
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
+          isLoginModalOpen={isLoginModalOpen}
+          setIsLoginModalOpen={setIsLoginModalOpen}
+          setIsSignUpModalOpen={setIsSignUpModalOpen}
           setToken={setToken}
           setUserInfo={setUserInfo}
           baseURL={baseURL}
+        />
+      )}
+
+      {isSignUpModalOpen && (
+        <SignUpModal
+          setIsOpen={setIsSignUpModalOpen}
+          baseURL={baseURL}
+          setToken={setToken}
+          setUserInfo={setUserInfo}
         />
       )}
     </>
