@@ -21,6 +21,8 @@ export default function SignUpModal({
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  console.log(error);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 

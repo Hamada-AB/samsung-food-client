@@ -17,8 +17,10 @@ export default function HomePage({
           setUserInfo={setUserInfo}
           baseURL={baseURL}
         />
-
-        <SectionOne />
+        <SectionOne
+          baseURL={baseURL}
+          setSuccessfulMessage={setSuccessfulMessage}
+        />
       </div>
 
       <div className="home-page">
