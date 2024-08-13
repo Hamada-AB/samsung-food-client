@@ -17,7 +17,7 @@ export default function AuthForm({
   const [showPw, setShowPw] = useState(false);
 
   const inputClass = clsx({
-    "input-error-border": error && !username,
+    "input-error-border": error && !email,
   });
 
   return (

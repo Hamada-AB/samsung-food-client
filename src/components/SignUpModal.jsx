@@ -1,10 +1,14 @@
 import { useState } from "react";
+
+// ICONS
 import save from "../assets/icons/sign-up-feartures/save.svg";
 import discover from "../assets/icons/sign-up-feartures/discover.svg";
 import plan from "../assets/icons/sign-up-feartures/plan.svg";
 import follow from "../assets/icons/sign-up-feartures/follow.svg";
 import googlePlay from "../assets/icons/sign-up-feartures/google-play.svg";
 import appStore from "../assets/icons/sign-up-feartures/app-store.svg";
+
+// COMPONENTS
 import AuthForm from "./AuthForm";
 import AlternativeAuth from "./AlternativeAuth";
 
