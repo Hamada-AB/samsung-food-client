@@ -546,6 +546,11 @@ video {
   left: 0;
 }
 
+.arrow-icon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 /****** MEDIA QUESRy ******/
 @media only screen and (max-width: 760px) {
   .home-header {
