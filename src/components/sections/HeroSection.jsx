@@ -2,12 +2,12 @@ import { useState } from "react";
 import SignUpModal from "../SignUpModal";
 import ladyPhoto from "../../assets/images/section-1/lady.jpg";
 
-export default function SectionOne({ baseURL, setToken, setUserInfo }) {
+export default function HeroSection({ baseURL, setToken, setUserInfo }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <section className="section-one">
+      <section className="hero-section">
         <div className="welcome">
           <h1>Food Your Way</h1>
           <p className="welcome-message">

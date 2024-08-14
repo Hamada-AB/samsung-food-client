@@ -15,11 +15,6 @@ export default function HomeHeader({ setToken, setUserInfo, baseURL }) {
     }
   }, [isSignUpModalOpen]);
 
-  const headerClasses = clsx({
-    "home-header": true,
-    "scroll-fixed": currentScrollY > 0,
-  });
-
   useEffect(() => {
     const handleScroll = () => {
       setcurrentScrollY(window.scrollY);
@@ -32,14 +27,19 @@ export default function HomeHeader({ setToken, setUserInfo, baseURL }) {
     };
   }, [currentScrollY]);
 
+  const headerClasses = clsx({
+    "home-header": true,
+    "scroll-fixed": currentScrollY > 0,
+  });
+
   return (
-    <>
-      <header className={headerClasses}>
+    <div className={headerClasses}>
+      <header>
         <div className="logo">
           <img src={logo} alt="samsung logo." />
         </div>
         <button className="login-btn" onClick={() => setIsLoginModalOpen(true)}>
-          Log in
+          Log In
         </button>
       </header>
 
@@ -62,6 +62,6 @@ export default function HomeHeader({ setToken, setUserInfo, baseURL }) {
           setUserInfo={setUserInfo}
         />
       )}
-    </>
+    </div>
   );
 }

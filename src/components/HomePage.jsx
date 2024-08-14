@@ -1,22 +1,23 @@
 // COMPONENTS
 import HomeHeader from "./HomeHeader";
-import SectionOne from "./sections/SectionOne";
+import HeroSection from "./sections/HeroSection";
+import MainSectons from "./sections/MainSections";
 
 export default function HomePage({ setToken, setUserInfo, baseURL }) {
   return (
     <>
-      <div>
-        <HomeHeader
-          setToken={setToken}
-          setUserInfo={setUserInfo}
-          baseURL={baseURL}
-        />
-        <SectionOne
-          setToken={setToken}
-          setUserInfo={setUserInfo}
-          baseURL={baseURL}
-        />
-      </div>
+      <HomeHeader
+        setToken={setToken}
+        setUserInfo={setUserInfo}
+        baseURL={baseURL}
+      />
+      <HeroSection
+        setToken={setToken}
+        setUserInfo={setUserInfo}
+        baseURL={baseURL}
+      />
+
+      <MainSectons />
 
       <div className="home-page">
         <div className="logo"></div>

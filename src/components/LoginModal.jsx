@@ -73,7 +73,6 @@ export default function LoginModal({
             </button>
           </div>
           <div className="forgot-pw">
-            {" "}
             {error && <button>Forgot password</button>}
           </div>
 
