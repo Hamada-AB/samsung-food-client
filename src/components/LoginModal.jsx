@@ -72,6 +72,10 @@ export default function LoginModal({
               Sign Up
             </button>
           </div>
+          <div className="forgot-pw">
+            {" "}
+            {error && <button>Forgot password</button>}
+          </div>
 
           <AlternativeAuth />
         </div>
