@@ -157,6 +157,17 @@ button {
   cursor: pointer;
 }
 
+.forgot-pw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 10px;
+  color: var(--primary-btn-bg-col);
+  font-size: 12px;
+  font-weight: 600;
+}
+
 .alternative-auth {
   width: 100%;
 
@@ -251,7 +262,7 @@ input {
 .password-dev {
   width: 100%;
   padding: 5px 8px;
-  margin-bottom: 17px;
+  margin-bottom: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
