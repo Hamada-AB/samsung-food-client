@@ -14,7 +14,10 @@ export default function HeroSection({ baseURL, setToken, setUserInfo }) {
             Personalize your culinary experience with a versatile app that lets
             you explore, customize, and save recipes tailored to your taste.
           </p>
-          <button className="signup-btn" onClick={() => setIsOpen(true)}>
+          <button
+            className="signup-btn main-btn"
+            onClick={() => setIsOpen(true)}
+          >
             Sign Up
           </button>
           <div className="rating">
