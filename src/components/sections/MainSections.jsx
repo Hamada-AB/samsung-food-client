@@ -3,6 +3,7 @@ import DiscoverSection from "./DiscoverSection";
 import PlanSection from "./PlanSection";
 import ShoppingSection from "./ShoppingSection";
 import HealthSection from "./HealthSection";
+import LovedGlobally from "./LovedGlobally";
 
 export default function MainSectons() {
   return (
@@ -12,6 +13,7 @@ export default function MainSectons() {
       <PlanSection />
       <ShoppingSection />
       <HealthSection />
+      <LovedGlobally />
     </main>
   );
 }
