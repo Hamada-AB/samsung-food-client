@@ -5,6 +5,7 @@ import ShoppingSection from "./ShoppingSection";
 import HealthSection from "./HealthSection";
 import LovedGlobally from "./LovedGlobally";
 import Testimonials from "./Testimonials";
+import AwardWinning from "./AwardWinning";
 export default function MainSectons() {
   return (
     <main className="home-sections-container">
@@ -15,6 +16,7 @@ export default function MainSectons() {
       <HealthSection />
       <LovedGlobally />
       <Testimonials />
+      <AwardWinning />
     </main>
   );
 }
