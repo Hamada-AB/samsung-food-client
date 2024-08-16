@@ -4,7 +4,7 @@ import PlanSection from "./PlanSection";
 import ShoppingSection from "./ShoppingSection";
 import HealthSection from "./HealthSection";
 import LovedGlobally from "./LovedGlobally";
-
+import Testimonials from "./Testimonials";
 export default function MainSectons() {
   return (
     <main className="home-sections-container">
@@ -14,6 +14,7 @@ export default function MainSectons() {
       <ShoppingSection />
       <HealthSection />
       <LovedGlobally />
+      <Testimonials />
     </main>
   );
 }
