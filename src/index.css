@@ -805,9 +805,7 @@ svg.forward {
   justify-content: center;
   gap: 40px;
 
-  padding: 3rem 7rem 0 7rem;
-
-  padding-bottom: 50px; /**/
+  padding: 3rem 7rem 5rem 7rem;
 }
 
 .wining-app h2 {
@@ -852,6 +850,60 @@ svg.forward {
   color: var(--secondary-font-col);
   font-size: 18px;
   font-weight: 500;
+}
+
+/****** FOOTER ******/
+footer {
+  padding: 2rem 2.5rem;
+  border-top: 1px solid var(--border-primary-col);
+}
+
+footer,
+.footer-tabs,
+.footer-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 16px;
+  color: var(--secondary-font-col);
+}
+
+.footer-tabs {
+  gap: 20px;
+}
+
+.footer-tabs p {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.footer-tabs p::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: var(--primary-btn-bg-col);
+  bottom: 0;
+  left: 50%;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.footer-tabs p:hover::after {
+  width: 100%; /* Expand underline to full width */
+  left: 0; /* Adjust the position to cover entire width */
+}
+
+.footer-icons {
+  gap: 30px;
+}
+
+.footer-icons img {
+  width: 20px;
+  height: auto;
+
+  cursor: pointer;
 }
 
 /****** MEDIA QUESRy ******/
@@ -1017,7 +1069,7 @@ svg.forward {
   /****** AWARD WINNING  */
   .wining-app {
     gap: 30px;
-    padding: 2rem 1.25rem 0 1.25rem;
+    padding: 2rem 1.25rem 2rem 1.25rem;
   }
 
   .wining-app h2 {
@@ -1039,5 +1091,25 @@ svg.forward {
   .app-stores-icons img {
     width: 170px;
     height: auto;
+  }
+
+  /****** FOOTER ******/
+  footer {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    gap: 15px;
+    padding: 1.5rem 1.25rem 2rem 1.25rem;
+  }
+
+  .footer-tabs {
+    gap: 6px;
+  }
+
+  .footer-icons {
+    gap: 25px;
+  }
+
+  .footer-icons img {
+    width: 18px;
   }
 }
