@@ -53,7 +53,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="testimonial-section">
+    <section className="testimonials-section">
       <div className="testimonial-container">
         <ul className="testimonial-cards" ref={cardsContainerRef}>
           {testimonials.map((testimonial, index) => (

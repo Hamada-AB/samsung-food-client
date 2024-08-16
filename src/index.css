@@ -654,7 +654,7 @@ video {
 
 /****** TESTIMONIALS ******/
 /* TestimonialCarousel.css */
-.testimonial-section {
+.testimonials-section {
   position: relative;
   height: 600px;
 }
@@ -855,7 +855,7 @@ svg.forward {
 }
 
 /****** MEDIA QUESRy ******/
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 390px) {
   .home-header {
     padding: 1.8rem 1.25rem;
     transition: padding 0.4s ease;
@@ -1010,7 +1010,34 @@ svg.forward {
   }
 
   /* TESTIMONIALS */
-  .testimonial-container {
+  .testimonials-section {
     display: none;
+  }
+
+  /****** AWARD WINNING  */
+  .wining-app {
+    gap: 30px;
+    padding: 2rem 1.25rem 0 1.25rem;
+  }
+
+  .wining-app h2 {
+    font-size: 1.4rem;
+    letter-spacing: 0.6px;
+    line-height: 1.8rem;
+    text-align: center;
+  }
+
+  .wining-app p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .app-stores-icons {
+    flex-direction: column;
+  }
+
+  .app-stores-icons img {
+    width: 170px;
+    height: auto;
   }
 }
