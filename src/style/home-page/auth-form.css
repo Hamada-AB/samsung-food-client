@@ -1,0 +1,93 @@
+.loginForm {
+  margin-top: 30px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+
+  color: var(--secondary-font-col);
+  font-size: 16px;
+  font-family: var(--secondary-font-family);
+  opacity: 0.8;
+
+  border: 1px solid var(--border-primary-col);
+  border-radius: 5px;
+}
+
+.password-input {
+  padding: 0;
+  margin-bottom: 0;
+
+  color: var(--secondary-font-col);
+  font-size: 16px;
+  font-family: var(--secondary-font-family);
+  opacity: 0.8;
+  border: none;
+}
+
+.password-dev {
+  width: 100%;
+  padding: 5px 8px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 1px solid var(--border-primary-col);
+  border-radius: 5px;
+}
+
+.password-dev img {
+  width: 15px;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid var(--primary-btn-bg-col);
+}
+
+.password-input:focus {
+  border: none;
+}
+
+.password-dev:focus-within {
+  border: 1px solid var(--primary-btn-bg-col);
+}
+
+.input-error-border {
+  border: 1px solid var(--error-color);
+}
+
+input::placeholder {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 13px;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  padding: 8px 0;
+  margin: 10px 0 7px 0;
+
+  color: var(--body-bg-color);
+  font-weight: 600;
+  background-color: var(--primary-btn-bg-col);
+  border-radius: 2rem;
+
+  transition: background 300ms;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-btn-bg-hover-col);
+}

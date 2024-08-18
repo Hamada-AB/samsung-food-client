@@ -1,0 +1,60 @@
+.alternative-auth {
+  width: 100%;
+
+  color: #808080bd;
+  font-size: 14px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 6px;
+  align-items: center;
+
+  margin: 10px 0;
+}
+
+.alternative-auth .line {
+  border-top: 1px solid #80808071;
+  height: 0;
+}
+
+.alternative-auth-icons,
+.alternative-auth-icons button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alternative-auth-icons button {
+  justify-content: center;
+
+  padding: 8px;
+  border: 1px solid #80808071;
+  border-radius: 50%;
+
+  width: 20px;
+  height: 20px;
+
+  transition: border-color 300ms, background-color 300ms;
+}
+
+.alternative-auth-icons button:hover {
+  border-color: var(--secondary-font-col);
+  background-color: var(--border-primary-col);
+}
+
+.alternative-auth-icons button img {
+  width: 100%;
+  height: auto;
+}
+
+.terms-and-privacy-policy {
+  color: #808080cc;
+  font-size: 12px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.terms-and-privacy-policy span {
+  color: var(--primary-btn-bg-hover-col);
+  cursor: pointer;
+}

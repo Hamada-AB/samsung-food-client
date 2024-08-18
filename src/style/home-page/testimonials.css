@@ -1,0 +1,148 @@
+.testimonials-section {
+  position: relative;
+  height: 600px;
+}
+
+.testimonial-container {
+  width: 100%;
+  overflow: hidden;
+
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  width: 98.7vw;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  padding: 4rem 0 2rem 0;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  transition: transform 0.5s ease;
+  user-select: none;
+}
+
+.card {
+  width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+
+  background-color: #f0f0f0aa;
+  padding: 30px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card.scale-up {
+  transform: scale(1.2);
+  transform-origin: center;
+  margin: 0 -5px 0 -30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background-color: #f0f0f0;
+}
+
+.card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.card-heading img {
+  width: 22px;
+}
+
+.card-heading h3 {
+  color: #737d97;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  margin-bottom: 30px;
+}
+
+.card-content {
+  color: #7d7d7d;
+}
+
+.card-author {
+  color: #010101;
+  font-weight: 500;
+}
+
+.testimonials-buttons {
+  margin-top: 4rem;
+  display: flex;
+  gap: 25px;
+}
+
+.arrow-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  background-color: var(--body-bg-color);
+  border: 1px solid var(--primary-btn-bg-col);
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--primary-btn-bg-col);
+}
+
+.card svg {
+  fill: #909bab;
+}
+
+.card.comma svg {
+  fill: var(--primary-btn-bg-col);
+}
+
+svg.forward {
+  transform: scaleX(-1);
+}
+
+.arrow-btn:hover {
+  background-color: var(--primary-btn-bg-col);
+}
+
+.arrow-btn:hover svg {
+  fill: var(--body-bg-color);
+}
+
+.arrow-btn:disabled {
+  cursor: default;
+  border: 1px solid #dee1e6;
+  background-color: none;
+}
+
+.arrow-btn:disabled:hover {
+  background-color: var(--body-bg-color);
+}
+
+.arrow-btn:disabled svg {
+  fill: #909bab;
+}
+
+@media only screen and (max-width: 400px) {
+  .testimonials-section {
+    display: none;
+  }
+}

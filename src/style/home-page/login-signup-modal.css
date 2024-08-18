@@ -1,0 +1,155 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+/* Modal content */
+.login-modal-content {
+  background-color: var(--body-bg-color);
+  padding: 30px;
+  border-radius: 8px;
+  width: 330px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  font-size: 24px;
+  color: var(--primary-btn-bg-hover-col);
+
+  transition: scale 200ms;
+}
+
+.close-button:hover {
+  scale: 1.2;
+}
+
+.no-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  color: var(--secondary-font-col);
+  gap: 10px;
+}
+
+.no-account button {
+  color: var(--primary-btn-bg-hover-col);
+  cursor: pointer;
+}
+
+.forgot-pw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 10px;
+  color: var(--primary-btn-bg-col);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/****** SIGN UP MODAL ******/
+.sign-up-modal-content {
+  background-color: var(--body-bg-color);
+  background-image: url("../src/assets/images/sign-up-bg-complete.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(
+    --primary-btn-bg-col
+  ); /* Fallback color while the image loads */
+
+  padding: 50px 40px;
+  border-radius: 8px;
+  width: 70%;
+  height: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.sign-up-modal-content .close-button {
+  color: var(--body-bg-color);
+}
+
+.features-and-form {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  gap: 30px;
+}
+
+.sign-up-features {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  color: var(--body-bg-color);
+  gap: 20px;
+}
+
+.sign-up-features li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.sign-up-features li img {
+  width: 20px;
+}
+
+.download-app {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.download-app img {
+  height: 40px;
+}
+
+.sign-up-form {
+  background-color: var(--body-bg-color);
+  padding: 30px;
+  border-radius: 8px;
+  width: 320px;
+}
+
+@media only screen and (max-width: 400px) {
+  .sign-up-modal-content {
+    display: flex;
+    justify-content: center;
+    width: 370px;
+  }
+
+  .sign-up-features {
+    display: none;
+  }
+
+  .sign-up-form {
+    border-radius: 0;
+  }
+
+  .login-modal-content {
+    width: 350px;
+  }
+}

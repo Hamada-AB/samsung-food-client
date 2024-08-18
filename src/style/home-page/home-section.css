@@ -1,0 +1,111 @@
+.home-section {
+  display: flex;
+  align-items: center;
+
+  gap: 6rem;
+  padding: 4rem 7rem 0 7rem;
+}
+
+video {
+  border-radius: 45px 45px 0 0;
+  border-bottom: none;
+}
+
+.descBox,
+.descBox-discover {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 1.3rem;
+}
+
+.discover-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 4rem;
+}
+
+.descBox-discover {
+  align-items: center;
+  max-width: 900px;
+  gap: 25px;
+  text-align: center;
+}
+
+.descBox-h2 {
+  font-size: 2.7rem;
+  letter-spacing: 0.8px;
+  line-height: 65px;
+}
+
+.section-link {
+  max-width: fit-content;
+  color: var(--primary-btn-bg-col);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+}
+
+.section-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  bottom: 0;
+  left: 50%;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.section-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.arrow-icon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 400px) {
+  .home-section {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1.5rem 1.25rem 0 1.25rem;
+    gap: 1rem;
+  }
+
+  .discover-section {
+    padding: 1rem 1.25rem 0 1.25rem;
+  }
+
+  .home-sections-container :nth-child(odd) {
+    flex-wrap: wrap-reverse;
+  }
+
+  .descBox,
+  .descBox-discover {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    padding: 0rem 1.25rem 0 1.25rem;
+  }
+
+  .descBox-h2 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+
+  .section-video {
+    text-align: center;
+  }
+}

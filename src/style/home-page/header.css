@@ -1,0 +1,77 @@
+.home-header {
+  padding: 2.5rem 2.5rem;
+  background-color: var(--body-bg-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  transition: padding 0.7s ease;
+}
+
+header {
+  max-width: 1390px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* this rule set will be added to HomeHeader when user scroll */
+.scroll-fixed {
+  padding: 1rem 2.5rem;
+  opacity: 0.95;
+  z-index: 11;
+}
+
+.login-btn {
+  color: var(--secondary-font-col);
+  font-size: 25px;
+  font-weight: 600;
+  border: 1px solid var(--border-primary-col);
+  border-radius: 2rem;
+  padding: 0.5rem 0.75rem;
+  transition: border 300ms;
+}
+
+.login-btn:hover {
+  border: 1px solid var(--secondary-font-col);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 180px;
+}
+
+@media only screen and (max-width: 400px) {
+  .home-header {
+    padding: 1.8rem 1.25rem;
+    transition: padding 0.4s ease;
+  }
+
+  header {
+    padding: 0;
+  }
+
+  .scroll-fixed {
+    padding: 0.7rem 1.25rem 0.7rem 1.25rem;
+  }
+
+  .login-btn {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .logo {
+    width: 140px;
+  }
+}

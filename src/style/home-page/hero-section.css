@@ -1,0 +1,101 @@
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 8rem 2.5rem 0 2.5rem;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding-top: 20px;
+}
+
+.welcome h1 {
+  font-size: 4.5rem;
+}
+
+.welcome-message {
+  width: 80%;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.signup-btn {
+  color: var(--body-bg-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: var(--primary-btn-bg-col);
+
+  width: fit-content;
+  padding: 12px 33px;
+
+  border-radius: 35px;
+  transition: background-color 300ms;
+}
+
+.signup-btn:hover {
+  background-color: var(--primary-btn-bg-hover-col);
+}
+
+.stars {
+  font-size: 15px;
+}
+
+.rating {
+  display: flex;
+  gap: 10px;
+}
+
+.rating p {
+  font-size: 16px;
+  color: var(--secondary-font-col);
+  opacity: 0.7;
+}
+
+/* lady photo */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 400px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding: 5rem 1.25rem 0 1.25rem;
+  }
+
+  .welcome h1 {
+    font-size: 40px;
+  }
+
+  .welcome {
+    align-items: center;
+    text-align: center;
+  }
+
+  .welcome-message {
+    width: 80%;
+    font-size: 20px;
+  }
+
+  .submit-btn {
+    font-weight: 500;
+  }
+
+  .main-btn {
+    font-size: 1.2rem;
+    padding: 10px 25px;
+  }
+
+  .rating {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lady-photo {
+    margin-top: 30px;
+    margin-left: 40px;
+  }
+}
