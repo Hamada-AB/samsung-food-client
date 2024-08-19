@@ -1,0 +1,173 @@
+:root {
+  --primary-font-family: "Poppins", sans-serif;
+  --secondary-font-family: "Hind Siliguri", sans-serif;
+  --body-bg-color: #fff;
+  --croll-body-bg: #f6f6f8;
+  --primary-btn-bg-col: #ff9300;
+  --primary-btn-bg-hover-col: #f87600;
+  --primary-font-col: #010101;
+  --secondary-font-col: #5c5c5c;
+  --support-btn-bg-col: #324255;
+  --border-primary-col: #e6e6e6;
+  --error-color: #f20049;
+  --section-bg-color: #fcfcfc;
+}
+
+.main-haeder,
+.navbar,
+.serach-bar,
+.navbar ul,
+.header-right,
+.initials,
+.down-arrow,
+.log-out-btn {
+  display: flex;
+  align-items: center;
+}
+
+.main-haeder {
+  justify-content: space-between;
+  gap: 30px;
+  height: 60px;
+  padding: 0rem 2.5rem;
+  background-color: var(--body-bg-color);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 20;
+}
+
+.main-haeder img {
+  width: 150px;
+}
+
+.navbar {
+  width: 50%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.link a {
+  display: flex;
+  align-items: center;
+  height: 60px;
+
+  text-decoration: none;
+  color: var(--primary-font-col);
+}
+
+.selected a {
+  height: 59px;
+  font-weight: 500;
+  color: var(--primary-btn-bg-col);
+}
+
+.active {
+  border-bottom: 2px solid #f87600;
+}
+
+.serach-bar {
+  width: 30%;
+  gap: 10px;
+  background-color: #f3f1f1;
+  padding: 7px 15px;
+  border-radius: 25px;
+  transition: width 300ms, background-color 50ms;
+}
+
+.serach-bar:focus-within {
+  outline: 1px solid var(--primary-btn-bg-col);
+  width: 50%;
+  background-color: var(--body-bg-color);
+}
+
+.serach-bar input {
+  background-color: transparent;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.serach-bar input::placeholder {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.serach-bar input:focus {
+  border: none;
+}
+
+.navbar ul {
+  gap: 50px;
+}
+
+.header-right {
+  gap: 10px;
+  position: relative;
+}
+
+.initials {
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--body-bg-color);
+  background-color: #b639ff;
+  border-radius: 50%;
+}
+
+.down-arrow {
+  gap: 10px;
+  font-size: 18px;
+}
+
+.log-out-menu {
+  width: 110%;
+  background-color: var(--body-bg-color);
+  padding: 10px;
+
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.log-out-btn {
+  gap: 10px;
+  transition: color 300ms;
+}
+
+.log-out-btn svg,
+.down-arrow svg,
+.serach-bar svg {
+  fill: #8c8c8c;
+  transition: fill 300ms;
+}
+
+.serach-bar svg {
+  width: 30px;
+}
+
+.log-out-btn:hover {
+  color: var(--primary-btn-bg-col);
+}
+
+.log-out-btn:hover svg,
+.serach-bar:focus-within svg {
+  fill: var(--primary-btn-bg-col);
+}
+
+/* MAIN */
+
+.main {
+  padding-top: 100px;
+}

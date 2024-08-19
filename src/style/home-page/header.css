@@ -1,4 +1,4 @@
-.home-header {
+.home-header-dev {
   padding: 2.5rem 2.5rem;
   background-color: var(--body-bg-color);
   position: fixed;
@@ -10,7 +10,7 @@
   transition: padding 0.7s ease;
 }
 
-header {
+.home-header {
   max-width: 1390px;
   margin: 0 auto;
   padding: 0 2.5rem;

@@ -28,13 +28,13 @@ export default function HomeHeader({ setToken, setUserInfo, baseURL }) {
   }, [currentScrollY]);
 
   const headerClasses = clsx({
-    "home-header": true,
+    "home-header-dev": true,
     "scroll-fixed": currentScrollY > 0,
   });
 
   return (
     <div className={headerClasses}>
-      <header>
+      <header className="home-header">
         <div className="logo">
           <img src={logo} alt="samsung logo." />
         </div>
