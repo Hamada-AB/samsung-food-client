@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, Routes, Route } from "react-router-dom";
 // COMPONENTS
+import DataProvider from "./DataProvider";
 import MainHeader from "./MainHeader";
 import MainHome from "./MainHome";
 import Recipes from "./Recipes";
@@ -39,14 +40,13 @@ export default function MainPage({ token, setToken, userInfo, baseURL }) {
         </MainHeader>
 
         <main className="main">
-          <Routes>
-            <Route
-              path="/"
-              element={<MainHome token={token} baseURL={baseURL} />}
-            />
-            <Route path="/recipes" element={<Recipes />} />
-            <Route path="/saved" element={<SavedRecipes />} />
-          </Routes>
+          <DataProvider token={token} baseURL={baseURL}>
+            <Routes>
+              <Route path="/" element={<MainHome />} />
+              <Route path="/recipes" element={<Recipes />} />
+              <Route path="/saved" element={<SavedRecipes />} />
+            </Routes>
+          </DataProvider>
         </main>
       </div>
     </>

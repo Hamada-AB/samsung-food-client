@@ -1,18 +1,3 @@
-:root {
-  --primary-font-family: "Poppins", sans-serif;
-  --secondary-font-family: "Hind Siliguri", sans-serif;
-  --body-bg-color: #fff;
-  --croll-body-bg: #f6f6f8;
-  --primary-btn-bg-col: #ff9300;
-  --primary-btn-bg-hover-col: #f87600;
-  --primary-font-col: #010101;
-  --secondary-font-col: #5c5c5c;
-  --support-btn-bg-col: #324255;
-  --border-primary-col: #e6e6e6;
-  --error-color: #f20049;
-  --section-bg-color: #fcfcfc;
-}
-
 .main-haeder,
 .navbar,
 .serach-bar,
@@ -164,10 +149,4 @@
 .log-out-btn:hover svg,
 .serach-bar:focus-within svg {
   fill: var(--primary-btn-bg-col);
-}
-
-/* MAIN */
-
-.main {
-  padding-top: 100px;
 }

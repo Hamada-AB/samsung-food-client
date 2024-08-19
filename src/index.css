@@ -11,6 +11,10 @@
 @import url("../src/style/home-page/footer.css");
 
 /****** MAIN PAGE ******/
+@import url("../src/style/main-page/main-home.css");
+@import url("../src/style/main-page/recipe-card.css");
+
+/****** MAIN PAGE ******/
 @import url("../src/style/main-page/header.css");
 
 /* PRIMARY FONT FAMILY */
@@ -74,6 +78,60 @@ button {
   background-image: linear-gradient(rgba(0 0 0 / 3%), rgba(0 0 0 / 3%));
   pointer-events: none; /* Ensure overlay doesn't block interactions */
   z-index: 10; /* Keep the overlay on top */
+}
+
+/* Loader */
+.spinner {
+  margin-left: 45%;
+  background-color: light-dark(#f0f5fa, #1c1c1c);
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% {
+    stroke: #4285f4;
+  }
+  25% {
+    stroke: #de3e35;
+  }
+  50% {
+    stroke: #f7c223;
+  }
+  75% {
+    stroke: #1b9a59;
+  }
+  100% {
+    stroke: #4285f4;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg);
+  }
 }
 
 @media only screen and (max-width: 400px) {
