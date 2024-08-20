@@ -1,5 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { DataContext } from "./DataProvider";
+import { useNavigate, useLocation } from "react-router-dom";
+
 import parse from "html-react-parser";
 
 import { recipeCardIcons } from "../data/recipe-card-icoms";
@@ -9,6 +11,12 @@ export default function RecipeCard({ recipe }) {
   const { users } = useContext(DataContext);
   const [user, setUser] = useState("");
   const { fristName, lastName, avatar } = user;
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    findUser();
+  }, []);
 
   function findUser() {
     users.find((user) => {
@@ -18,9 +26,10 @@ export default function RecipeCard({ recipe }) {
     });
   }
 
-  useEffect(() => {
-    findUser();
-  }, []);
+  const handleIconClick = (event, action) => {
+    event.stopPropagation();
+    action();
+  };
 
   return (
     <article className="recipe-card">
@@ -39,22 +48,36 @@ export default function RecipeCard({ recipe }) {
             <p>{category}</p>
           </div>
         </div>
-
-        {parse(recipeCardIcons.menu)}
+        <button> {parse(recipeCardIcons.menu)}</button>
       </div>
 
-      <div className="recipe-body">
+      {/*  */}
+
+      <div
+        className="recipe-body"
+        onClick={() => {
+          navigate(`/recipes/${recipe.id}`, {
+            state: { from: location.pathname, recipe },
+          });
+        }}
+      >
         <img src={image} alt="" />
         <div className="title-save">
           <p>{title}</p>
-          {parse(recipeCardIcons.save)}
+          <button
+            onClick={(e) =>
+              handleIconClick(e, () => console.log("save icon is clicked"))
+            }
+          >
+            {parse(recipeCardIcons.save)}
+          </button>
         </div>
       </div>
 
       <div className="recipe-icons">
-        {parse(recipeCardIcons.like)}
-        {parse(recipeCardIcons.comment)}
-        {parse(recipeCardIcons.share)}
+        <button>{parse(recipeCardIcons.like)}</button>
+        <button> {parse(recipeCardIcons.comment)}</button>
+        <button> {parse(recipeCardIcons.share)}</button>
       </div>
     </article>
   );

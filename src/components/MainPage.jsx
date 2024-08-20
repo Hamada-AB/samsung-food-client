@@ -6,6 +6,7 @@ import MainHeader from "./MainHeader";
 import MainHome from "./MainHome";
 import Recipes from "./Recipes";
 import SavedRecipes from "./SavedRecipes";
+import ClickedRecipe from "./ClickedRecipe";
 
 export default function MainPage({ token, setToken, userInfo, baseURL }) {
   const [selectedTab, setSelectedTab] = useState(null);
@@ -21,7 +22,7 @@ export default function MainPage({ token, setToken, userInfo, baseURL }) {
           <nav>
             <ul>
               <li className={`link ${selectedTab === 1 ? "selected" : ""}`}>
-                <NavLink to="/" onClick={() => habdleSelectedTab(1)}>
+                <NavLink to="/home" onClick={() => habdleSelectedTab(1)}>
                   Home
                 </NavLink>
               </li>
@@ -40,10 +41,11 @@ export default function MainPage({ token, setToken, userInfo, baseURL }) {
         </MainHeader>
 
         <main className="main">
-          <DataProvider token={token} baseURL={baseURL}>
+          <DataProvider token={token} baseURL={baseURL} userInfo={userInfo}>
             <Routes>
-              <Route path="/" element={<MainHome />} />
+              <Route path="/home" element={<MainHome />} />
               <Route path="/recipes" element={<Recipes />} />
+              <Route path="/recipes/:id" element={<ClickedRecipe />} />
               <Route path="/saved" element={<SavedRecipes />} />
             </Routes>
           </DataProvider>

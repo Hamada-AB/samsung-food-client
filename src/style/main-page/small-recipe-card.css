@@ -1,0 +1,87 @@
+.small-recipe-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+
+  gap: 20px;
+}
+
+.small-card-body {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 300px;
+  width: 100%;
+
+  padding: 15px;
+  background-color: transparent;
+  border-radius: 15px;
+
+  background-size: 160%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition: background-size 300ms;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.small-card-body:hover {
+  background-size: 180%;
+}
+
+.like-save-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.like-save-icons svg {
+  fill: #f6f6f8;
+}
+
+.menu-icon {
+  padding: 2px;
+  background-color: var(--body-bg-color);
+  border-radius: 50%;
+}
+
+.menu-icon svg {
+  fill: #5c5c5c;
+}
+
+.avatar-and-menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar-and-menu-icon :first-child {
+  display: flex;
+  gap: 7px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--body-bg-color);
+}
+
+.avatar-and-menu-icon :first-child img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.recipe-title-and-prep-time {
+  padding: 10px 0;
+}
+
+.recipe-title-and-prep-time :first-child {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.recipe-title-and-prep-time :last-child span {
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 10px;
+  color: #2a2a2a;
+}

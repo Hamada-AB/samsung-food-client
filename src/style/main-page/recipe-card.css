@@ -1,23 +1,9 @@
-:root {
-  --primary-font-family: "Poppins", sans-serif;
-  --secondary-font-family: "Hind Siliguri", sans-serif;
-  --body-bg-color: #fff;
-  --croll-body-bg: #f6f6f8;
-  --primary-btn-bg-col: #ff9300;
-  --primary-btn-bg-hover-col: #f87600;
-  --primary-font-col: #010101;
-  --secondary-font-col: #5c5c5c;
-  --support-btn-bg-col: #324255;
-  --border-primary-col: #e6e6e6;
-  --error-color: #f20049;
-  --section-bg-color: #fcfcfc;
-}
-
-/* ************ */
 .recipe-card {
   max-width: 650px;
   margin-bottom: 2rem;
   border-bottom: 1px solid var(--border-primary-col);
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
 }
 
 .recipe-header {
@@ -71,6 +57,10 @@
   margin-top: -5px;
   font-size: 17px;
   color: var(--secondary-font-col);
+}
+
+.recipe-body {
+  cursor: pointer;
 }
 
 .recipe-body svg,

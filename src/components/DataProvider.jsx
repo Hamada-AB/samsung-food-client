@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 
 export const DataContext = createContext();
 
-export default function DataProvider({ children, token, baseURL }) {
+export default function DataProvider({ children, token, baseURL, userInfo }) {
   const [users, setUsers] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [comments, setComments] = useState([]);
@@ -85,6 +85,7 @@ export default function DataProvider({ children, token, baseURL }) {
   const value = {
     token,
     baseURL,
+    userInfo,
     users,
     setUsers,
     recipes,
