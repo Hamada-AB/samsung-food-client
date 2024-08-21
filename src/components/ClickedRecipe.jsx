@@ -7,21 +7,43 @@ import Comment from "./Comment";
 
 export default function ClickedRecipe() {
   const [currentScrollY, setcurrentScrollY] = useState(0);
+  const [isSaved, setIsSaved] = useState();
+  const [savedNum, setSavedNum] = useState(null);
   const [user, setUser] = useState({});
   const [recipeComments, setRecipeComments] = useState([]);
-  const { comments, users, userInfo } = useContext(DataContext);
+  const { comments, users, userInfo, token, baseURL, savedRecipes } =
+    useContext(DataContext);
 
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from || "/home";
   const recipe = location.state.recipe;
 
-  console.log({ currentScrollY });
+  console.log(savedNum);
+
+  function isRecipeSaved() {
+    setIsSaved(
+      savedRecipes.some(
+        (saved) => saved.recipeId === recipe.id && saved.userId === userInfo.id
+      )
+    );
+  }
+
+  function getSavedNum() {
+    const savedTimes = savedRecipes.filter(
+      (saved) => saved.recipeId === recipe.id
+    );
+    setSavedNum(savedTimes.length);
+  }
+
+  // console.log(savedRecipes);
 
   useEffect(() => {
     findUser();
     getRecipeComments();
-  }, [users, comments]);
+    isRecipeSaved();
+    getSavedNum();
+  }, [users, comments, savedRecipes]);
 
   useEffect(() => {
     // scroll to the top of the page when the component is mounted
@@ -58,6 +80,28 @@ export default function ClickedRecipe() {
     navigate(from);
   };
 
+  function handleSaveRecipe() {
+    if (!isSaved) {
+      fetch(`${baseURL}/savedRecipe`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId: userInfo.id, recipeId: recipe.id }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data && !data.error) {
+            setIsSaved(true);
+            setSavedNum((preNum) => preNum + 1);
+          } else {
+            console.error(data.error);
+          }
+        });
+    }
+  }
+
   return (
     <div className="main-div">
       <button
@@ -82,7 +126,9 @@ export default function ClickedRecipe() {
                 <button> {parse(clickedRecipeIcons.print)}</button>
               </div>
 
-              <button className="save-btn">Save</button>
+              <button className="save-btn" onClick={handleSaveRecipe}>
+                {isSaved ? "Saved" : "Save"}
+              </button>
             </div>
 
             <div className="user-details">
@@ -91,7 +137,7 @@ export default function ClickedRecipe() {
             </div>
             <p className="recipe-title">{recipe.title}</p>
             <div className="savedTime">
-              {parse(clickedRecipeIcons.savedTiems)} <p>150</p>
+              {parse(clickedRecipeIcons.savedTiems)} <p>{savedNum}</p>
             </div>
 
             <div className="prep">

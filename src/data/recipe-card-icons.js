@@ -11,5 +11,5 @@ export const recipeCardIcons = {
 
   share: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" data-testid="androidShare"><path d="M18 2.04c1.66 0 3 1.34 3 3s-1.34 3-3 3c-.79 0-1.5-.31-2.04-.81l-7.05 4.11c.05.23.09.46.09.7 0 .24-.04.47-.09.7l7.13 4.15c.52-.47 1.2-.77 1.96-.77 1.61 0 2.92 1.31 2.92 2.92 0 1.61-1.31 2.92-2.92 2.92-1.61 0-2.92-1.31-2.92-2.92 0-.22.03-.44.08-.65l-7.12-4.16c-.54.5-1.25.81-2.04.81-1.66 0-3-1.34-3-3s1.34-3 3-3c.79 0 1.5.31 2.04.81l7.05-4.11c-.05-.23-.09-.46-.09-.7 0-1.66 1.34-3 3-3Zm0 16.02c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1ZM6 11.04c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1Zm12-7c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1Z"></path></svg>`,
 
-  saved: `<svg viewBox="0 0 24 24" width="24" height="24" data-testid="plus"><path fill-rule="evenodd" d="M11 6a1 1 0 1 1 2 0v12a1 1 0 1 1-2 0V6Z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M5 12a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z" clip-rule="evenodd"></path></svg>`,
+  saved: `<svg viewBox="0 0 24 24" width="24" height="24" data-testid="bookmarkFilled"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2Z"></path></svg>`,
 };

@@ -1,13 +1,16 @@
 import { createContext, useState, useEffect } from "react";
-
+import { useLocation } from "react-router-dom";
 export const DataContext = createContext();
 
 export default function DataProvider({ children, token, baseURL, userInfo }) {
   const [users, setUsers] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [comments, setComments] = useState([]);
+  const [savedRecipes, setSavedRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
+
+  const location = useLocation();
 
   useEffect(() => {
     if (token) {
@@ -65,22 +68,22 @@ export default function DataProvider({ children, token, baseURL, userInfo }) {
           setIsLoading(false);
         });
 
-      // fetch(`${baseURL}/savedRecipe`, {
-      //   headers: {
-      //     Authorization: `Bearer ${token}`,
-      //     "Content-Type": "application/json",
-      //   },
-      // })
-      //   .then((response) => response.json())
-      //   .then((data) => {
-      //     if (data && !data.error) {
-      //       setSavedRecipes(data.savedRecipes);
-      //     } else {
-      //       setError(data.error);
-      //     }
-      //   });
+      fetch(`${baseURL}/savedRecipe/all`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data && !data.error) {
+            setSavedRecipes(data.allSavedRecipes);
+          } else {
+            setError(data.error);
+          }
+        });
     }
-  }, [token]);
+  }, [token, location]);
 
   const value = {
     token,
@@ -92,6 +95,10 @@ export default function DataProvider({ children, token, baseURL, userInfo }) {
     setRecipes,
     comments,
     setComments,
+    savedRecipes,
+    setSavedRecipes,
+    error,
+    setError,
     isLoading,
     setIsLoading,
   };

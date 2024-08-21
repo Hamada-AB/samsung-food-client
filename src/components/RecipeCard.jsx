@@ -3,16 +3,19 @@ import { DataContext } from "./DataProvider";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import parse from "html-react-parser";
+import { recipeCardIcons } from "../data/recipe-card-icons";
 
-import { recipeCardIcons } from "../data/recipe-card-icoms";
-
-export default function RecipeCard({ recipe }) {
-  const { category, title, image, userId } = recipe;
-  const { users } = useContext(DataContext);
+export default function RecipeCard({ recipe, isSaved }) {
   const [user, setUser] = useState("");
-  const { fristName, lastName, avatar } = user;
+  const [saved, setSaved] = useState(isSaved);
+  const { users, baseURL, token, userInfo, savedRecipes, setSavedRecipes } =
+    useContext(DataContext);
+
   const navigate = useNavigate();
   const location = useLocation();
+
+  const { category, title, image, userId } = recipe;
+  const { fristName, lastName, avatar } = user;
 
   useEffect(() => {
     findUser();
@@ -30,6 +33,50 @@ export default function RecipeCard({ recipe }) {
     event.stopPropagation();
     action();
   };
+
+  function handleSaveRecipe() {
+    fetch(`${baseURL}/savedRecipe`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userId: userInfo.id, recipeId: recipe.id }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data && !data.error) {
+          setSaved(!saved);
+          setSavedRecipes([...savedRecipes, data.savedRecipe]);
+        } else {
+          console.error(data.error);
+        }
+      });
+  }
+
+  function handleUnsaveRecipe() {
+    fetch(`${baseURL}/savedRecipe`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userId: userInfo.id, recipeId: recipe.id }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data && !data.error) {
+          const saved = savedRecipes.filter(
+            (saved) => saved?.recipeId !== data.deletedSavedRecipe?.recipeId
+          );
+
+          setSavedRecipes(saved);
+          setSaved(!saved);
+        } else {
+          console.error(data.error);
+        }
+      });
+  }
 
   return (
     <article className="recipe-card">
@@ -51,8 +98,6 @@ export default function RecipeCard({ recipe }) {
         <button> {parse(recipeCardIcons.menu)}</button>
       </div>
 
-      {/*  */}
-
       <div
         className="recipe-body"
         onClick={() => {
@@ -66,10 +111,12 @@ export default function RecipeCard({ recipe }) {
           <p>{title}</p>
           <button
             onClick={(e) =>
-              handleIconClick(e, () => console.log("save icon is clicked"))
+              handleIconClick(e, () =>
+                saved ? handleUnsaveRecipe() : handleSaveRecipe()
+              )
             }
           >
-            {parse(recipeCardIcons.save)}
+            {saved ? parse(recipeCardIcons.saved) : parse(recipeCardIcons.save)}
           </button>
         </div>
       </div>

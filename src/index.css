@@ -81,6 +81,19 @@ button {
   z-index: 10; /* Keep the overlay on top */
 }
 
+.saved-recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+  gap: 20px;
+}
+
+.no-saved-recipes {
+  font-size: 1.8rem;
+  color: #6f6f6f;
+  margin-left: 25%;
+  margin-top: 25%;
+}
+
 /* Loader */
 .spinner {
   margin-left: 45%;
