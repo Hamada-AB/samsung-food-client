@@ -1,3 +1,56 @@
+.add-post {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  max-width: 650px;
+  padding: 10px 0 25px 0;
+  gap: 15px;
+  margin-bottom: 35px;
+
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 500;
+  background-color: #b639ff;
+}
+
+.text {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #cfcfcf;
+  border-radius: 30px;
+  transition: border-color 300ms;
+  cursor: pointer;
+}
+
+.text:hover {
+  border-color: #545454;
+}
+
+.text input {
+  margin: 0;
+  border: none;
+  pointer-events: none;
+}
+
+.text input:focus {
+  border: none;
+}
+
+.text input::placeholder {
+  font-size: 18px;
+  color: #535353;
+}
+
 .main {
   max-width: 960px;
   margin: 0 auto;

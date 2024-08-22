@@ -9,7 +9,7 @@ export default function Comment({ users, comment }) {
 
   function findCommenter() {
     users.find((user) => {
-      if (user.id === comment.userId) {
+      if (user?.id === comment?.userId) {
         setCommenter(user);
       }
     });
@@ -17,11 +17,22 @@ export default function Comment({ users, comment }) {
   return (
     <article>
       <div className="commenter">
-        <img src={commenter.avatar} alt="people photo" />
-        <p>{commenter && commenter.fristName + " " + commenter.lastName}</p>
+        {commenter?.avatar ? (
+          <img src={commenter.avatar} alt="people photo" />
+        ) : (
+          <div className="no-image">
+            {" "}
+            {commenter.email?.[0]?.toUpperCase() || "U"}
+          </div>
+        )}
+        <p>
+          {commenter?.fristName && commenter?.lastName
+            ? commenter?.fristName + " " + commenter?.lastName
+            : "User"}
+        </p>
       </div>
       <div className="comment-content">
-        <p>{comment.content}</p>
+        <p>{comment?.content}</p>
       </div>
     </article>
   );

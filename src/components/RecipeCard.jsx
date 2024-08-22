@@ -4,8 +4,12 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import parse from "html-react-parser";
 import { recipeCardIcons } from "../data/recipe-card-icons";
+import AddCommentModal from "./AddCommentModal";
 
 export default function RecipeCard({ recipe, isSaved }) {
+  // to show and hide AddCommentModal
+  const [show, setShow] = useState(false);
+
   const [user, setUser] = useState("");
   const [saved, setSaved] = useState(isSaved);
   const { users, baseURL, token, userInfo, savedRecipes, setSavedRecipes } =
@@ -102,7 +106,7 @@ export default function RecipeCard({ recipe, isSaved }) {
         className="recipe-body"
         onClick={() => {
           navigate(`/recipes/${recipe.id}`, {
-            state: { from: location.pathname, recipe },
+            state: { from: location.pathname, recipe, up: true },
           });
         }}
       >
@@ -123,9 +127,20 @@ export default function RecipeCard({ recipe, isSaved }) {
 
       <div className="recipe-icons">
         <button>{parse(recipeCardIcons.like)}</button>
-        <button> {parse(recipeCardIcons.comment)}</button>
+
+        <button
+          onClick={() => {
+            navigate(`/recipes/${recipe.id}#addComment`, {
+              state: { from: location.pathname, recipe, up: false },
+            });
+          }}
+        >
+          {parse(recipeCardIcons.comment)}
+        </button>
         <button> {parse(recipeCardIcons.share)}</button>
       </div>
+
+      {show && <AddCommentModal show={show} setShow={setShow} />}
     </article>
   );
 }
