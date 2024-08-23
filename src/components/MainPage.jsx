@@ -28,7 +28,7 @@ export default function MainPage({ token, setToken, userInfo, baseURL }) {
               </li>
               <li className={`link ${selectedTab === 2 ? "selected" : ""}`}>
                 <NavLink to="/recipes" onClick={() => habdleSelectedTab(2)}>
-                  Recipes
+                  Explore
                 </NavLink>
               </li>
               <li className={`link ${selectedTab === 3 ? "selected" : ""}`}>

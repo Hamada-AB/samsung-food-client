@@ -21,7 +21,6 @@ export default function Comment({ users, comment }) {
           <img src={commenter.avatar} alt="people photo" />
         ) : (
           <div className="no-image">
-            {" "}
             {commenter.email?.[0]?.toUpperCase() || "U"}
           </div>
         )}

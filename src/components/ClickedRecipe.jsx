@@ -139,9 +139,19 @@ export default function ClickedRecipe() {
               </button>
             </div>
 
-            <div className="user-details">
-              <img src={user.avatar} alt="people photo" />
-              <p>{user && user.fristName + " " + user.lastName}</p>
+            <div className="commenter">
+              {user?.avatar ? (
+                <img src={user.avatar} alt="people photo" />
+              ) : (
+                <div className="no-image">
+                  {user.email?.[0]?.toUpperCase() || "U"}
+                </div>
+              )}
+              <p>
+                {user?.fristName && user?.lastName
+                  ? user?.fristName + " " + user?.lastName
+                  : "User"}
+              </p>
             </div>
             <p className="recipe-title">{recipe?.title}</p>
             <div className="savedTime">

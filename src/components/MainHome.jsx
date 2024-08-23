@@ -28,18 +28,22 @@ export default function MainHome() {
       <main className="main-home">
         {show && <AddPostModal show={show} setShow={setShow} />}
         <ul>
-          {recipes.map((recipe) => {
-            const isSaved = savedRecipes.some(
-              (saved) =>
-                saved.recipeId === recipe.id && saved.userId === userInfo.id
-            );
+          {recipes
+            .slice()
+            .reverse()
+            .map((recipe) => {
+              const isSaved = savedRecipes.some(
+                (saved) =>
+                  saved?.recipeId === recipe?.id &&
+                  saved?.userId === userInfo?.id
+              );
 
-            return (
-              <li key={recipe.id}>
-                <RecipeCard recipe={recipe} isSaved={isSaved} />
-              </li>
-            );
-          })}
+              return (
+                <li key={recipe.id}>
+                  <RecipeCard recipe={recipe} isSaved={isSaved} />
+                </li>
+              );
+            })}
         </ul>
       </main>
     </>

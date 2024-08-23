@@ -35,7 +35,7 @@ export default function HomeHeader({ setToken, setUserInfo, baseURL }) {
   return (
     <div className={headerClasses}>
       <header className="home-header">
-        <div className="logo">
+        <div className="logo" onClick={() => window.scrollTo(0, 0)}>
           <img src={logo} alt="samsung logo." />
         </div>
         <button className="login-btn" onClick={() => setIsLoginModalOpen(true)}>

@@ -117,8 +117,15 @@ export default function SmallRecipeCard({
               handleIconClick(e, () => console.log("user info is clicked"))
             }
           >
-            <img src={user.avatar} alt="avatar" />
-            <p>{user && user.fristName + " " + user.lastName}</p>
+            {user?.avatar ? (
+              <img src={user.avatar} alt="people photo" />
+            ) : (
+              <div className="no-image" id="small">
+                {user.email?.[0]?.toUpperCase() || "U"}
+              </div>
+            )}
+
+            <p>{user.fristName ? user.fristName : "User"}</p>
           </div>
 
           <button

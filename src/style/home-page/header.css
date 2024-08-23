@@ -52,12 +52,16 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .home-header {
-    padding: 1.8rem 1.25rem;
+  .home-header-dev {
+    padding: 0.7rem 1.25rem 0.7rem 1.25rem;
     transition: padding 0.4s ease;
   }
 
   header {
+    padding: 0;
+  }
+
+  .home-header {
     padding: 0;
   }
 

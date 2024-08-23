@@ -73,9 +73,7 @@ export default function LoginModal({
             </button>
           </div>
           <div className="forgot-pw">
-            {error && error.includes("incorrect") && (
-              <button>Forgot password</button>
-            )}
+            <button>Forgot password?</button>
           </div>
 
           <AlternativeAuth />

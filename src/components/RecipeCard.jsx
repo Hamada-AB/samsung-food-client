@@ -86,16 +86,18 @@ export default function RecipeCard({ recipe, isSaved }) {
     <article className="recipe-card">
       <div className="recipe-header">
         <div className="recipe-info">
-          <div className="init">
+          <div className={user.fristName ? "init" : "no-image"}>
             {avatar ? (
               <img src={avatar} alt="photo" />
+            ) : user.fristName && user.lastName ? (
+              fristName?.[0]?.toUpperCase() + lastName?.[0]?.toUpperCase()
             ) : (
-              user && fristName[0]?.toUpperCase() + lastName[0]?.toUpperCase()
+              user.email?.[0].toUpperCase()
             )}
           </div>
 
           <div className="name-category">
-            <p>{fristName + " " + lastName}</p>
+            <p>{user.fristName ? fristName + " " + lastName : "User"}</p>
             <p>{category}</p>
           </div>
         </div>

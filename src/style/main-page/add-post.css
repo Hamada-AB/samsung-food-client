@@ -13,7 +13,7 @@
   --section-bg-color: #fcfcfc;
 }
 
-.modal-overlay {
+.post-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -24,17 +24,23 @@
   align-items: center;
   justify-content: center;
   z-index: 20;
+  overflow-y: auto;
 }
 
 /* Modal content */
 .add-post-modal-content {
   background-color: var(--body-bg-color);
-  padding: 30px;
-  border-radius: 8px;
-  width: 600px;
-
+  padding: 30px 50px;
+  margin-top: 30px;
+  width: 650px;
+  max-height: 80vh;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;
+  overflow-y: auto;
+
+  /* Thin Scrollbar Styling */
+  scrollbar-width: thin;
+  scrollbar-color: #e0e0e0 #f1f1f1;
 }
 
 /* Close button */
@@ -51,4 +57,193 @@
 
 .close-button:hover {
   scale: 1.2;
+}
+
+/****** FORM ******/
+
+.add-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+select {
+  appearance: none;
+  padding: 10px;
+  font-size: 17px;
+  color: #333;
+  background-color: #f9f9f996;
+  border: 1px solid var(--border-primary-col);
+  border-radius: 5px;
+  width: 200px;
+  cursor: pointer;
+  transition: border-color 300ms;
+}
+
+select:hover {
+  border-color: #5c5c5c;
+}
+
+select option {
+  padding: 5px;
+  background-color: #f9f9f996;
+  color: #333;
+}
+
+select option:hover {
+  color: #fff;
+}
+
+/* FILE UPLOAD */
+
+.custom-file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+  background-color: #ebe8e8ae;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.custom-file-upload:hover {
+  background-color: #d7d7d7;
+}
+
+.custom-file-upload div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.custom-file-upload svg {
+  pointer-events: none;
+  width: 35px;
+  height: 35px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.add-post-h2 {
+  font-size: 25px;
+  color: #010101;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.add-post-h3 {
+  font-size: 20px;
+  color: #5c5c5c;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.post-textarea,
+.add-post-form input[type="text"],
+.time-need {
+  width: 100%;
+  max-width: 100%;
+  height: 100px;
+  padding: 10px;
+
+  font-size: 20px;
+  font-family: var(--primary-font-family);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f996;
+  outline: none;
+  border: 1px solid var(--border-primary-col);
+  resize: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-textarea:focus,
+.add-post-form input[type="text"]:focus,
+select:focus,
+.time-need:focus-within {
+  border-color: var(--primary-btn-bg-col);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  outline: none;
+}
+
+.post-textarea::placeholder,
+.add-post-form input[type="text"]::placeholder {
+  font-size: 16px;
+  font-family: var(--primary-font-family);
+  color: #9a9a9a;
+}
+
+.add-post-form input[type="text"]::placeholder {
+  color: #646464;
+}
+
+.add-post-form input[type="text"],
+.time-need {
+  height: 50px;
+}
+
+.time-p {
+  font-size: 17px;
+  color: #5c5c5c;
+  font-weight: 400;
+  margin-bottom: -5px;
+}
+
+.time-need {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-primary-col);
+  font-size: 17px;
+  width: 200px;
+  color: #9a9a9a;
+  margin-top: 8px;
+}
+
+#prep,
+#cook {
+  padding: 10px;
+  margin: 0;
+  border: none;
+  color: #010101;
+  background-color: #f9f9f996;
+}
+
+#prep:focus,
+#cook:focus {
+  height: 40px;
+  border: none;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.border-error {
+  border-color: var(--error-color);
+}
+
+.post-error-message {
+  color: var(--error-color);
+  font-size: 18px;
+}
+
+.post-submit-btn {
+  cursor: pointer;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  background-color: var(--primary-btn-bg-col);
+  border-radius: 5px;
+
+  transition: background-color 0.3s ease;
+}
+
+.post-submit-btn:hover {
+  background-color: var(--primary-btn-bg-hover-col);
 }
