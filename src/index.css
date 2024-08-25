@@ -38,6 +38,7 @@
   --border-primary-col: #e6e6e6;
   --error-color: #f20049;
   --section-bg-color: #fcfcfc;
+  scroll-behavior: smooth;
 }
 
 /****** GENERIC STYLE ******/
